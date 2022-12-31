@@ -19,9 +19,28 @@ app.get("/api/v1/instagram", (req, res) => {
   res.status(200).send(instaSocial);
 });
 
+app.get("/api/v1/facebook", (req, res) => {
+  const facebook = {
+    username: "Dharansh Neema",
+    followers: 20,
+    following: 50,
+    date: format.asString("dd/MM/yy hh:mm", new Date()),
+  };
+  res.status(200).json(facebook);
+});
+
+app.get("/api/v1/linkdien", (req, res) => {
+  const linkdien = {
+    username: "Dharansh Neema",
+    followers: 200,
+    following: 500,
+    date: format.asString("dd/MM/yy hh:mm", new Date()),
+  };
+  res.status(200).json(linkdien);
+});
 app.get("/api/v1/:anyurl", (req, res) => {
   const toReturn = req.params.anyurl;
-  res.send(toReturn);
+  res.status(200).send(toReturn);
 });
 app.listen(PORT, () => {
   console.log(`On Port ${PORT}`);
